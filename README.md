@@ -1,4 +1,4 @@
-# my-super-powers
+# my-utils
 
 This repo is a collection of tool or utilities that I use.
 
