@@ -1,0 +1,17 @@
+#!/bin/bash
+DIR="./"
+if [ "$#" -eq 1 ];then
+	DIR=$1
+fi
+echo "Examining links in $DIR"
+for i in $(find $DIR -type l);
+do
+        if [ -e $i ]
+        then
+                echo "Link is Okay $(readlink $i)"
+        else
+                echo "Link is bad!    $i --> $(readlink $i) "
+		echo $i >> bad.links
+        fi
+done;
+echo "Wrote bad link to file 'bad.links'"
