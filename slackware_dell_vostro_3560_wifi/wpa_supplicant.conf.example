@@ -1,0 +1,23 @@
+#ctrl_interface=/var/run/wpa_supplicant
+#ctrl_interface_group=root
+
+# /etc/wpa_supplicant.conf
+# ========================
+# This line enables the use of wpa_cli which is used by rc.wireless
+# if possible (to check for successful association)
+ctrl_interface=/var/run/wpa_supplicant
+# By default, only root (group 0) may use wpa_cli
+ctrl_interface_group=0
+eapol_version=1
+ap_scan=1
+fast_reauth=1
+#country=US
+
+# WPA protected network, supply your own ESSID and WPAPSK here:
+network={
+  scan_ssid=1
+  ssid="Internet101"
+  key_mgmt=WPA-PSK
+  proto=WPA2
+  psk="mypassword"
+}
